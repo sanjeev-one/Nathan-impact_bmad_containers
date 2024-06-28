@@ -41,4 +41,4 @@ jobs:
           context: .
           file: ./Dockerfile.s3df
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/FACET2-Bmad-PyTao:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/facet2-bmad-pytao:latest
