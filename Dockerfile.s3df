@@ -19,7 +19,7 @@ RUN apt-get update && \
 
 
 
-FROM docker.io/continuumio/miniforge3:latest
+FROM docker.io/continuumio/miniconda3:latest
 
 ENV PATH=/opt/conda/bin:$PATH
 
