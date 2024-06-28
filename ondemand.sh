@@ -1,8 +1,8 @@
 
 # Set the environment variable for the Apptainer image path
-export APPTAINER_IMAGE_PATH=/sdf/group/facet/sanjeev/containers/impact-bmad_latest.sif
-export NOTEBOOK_ROOT=$HOME/impact_bmad_container_notebooks
-mkdir -p $HOME/impact_bmad_container_notebooks
+export APPTAINER_IMAGE_PATH=/sdf/group/facet/sanjeev/containers/FACET2-Bmad-PyTao_latest.sif
+export NOTEBOOK_ROOT=$HOME/FACET2-Bmad-PyTao_container_notebooks
+mkdir -p $HOME/FACET2-Bmad-PyTao_container_notebooks
 
 # Define the jupyter function to use Apptainer for executing Jupyter with necessary bindings and running mkdir and cp commands
 function jupyter() {

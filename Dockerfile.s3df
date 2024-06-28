@@ -48,8 +48,7 @@ RUN /opt/conda/bin/conda install -y \
     conda-forge::openpmd-beamphysics && \
     /opt/conda/bin/conda clean -afy
 
-# for mason stobbe
-RUN pip install Wake-T
+
 
 
 # Install mpi4py with conda
@@ -57,10 +56,6 @@ RUN conda install -c conda-forge mpi4py
 
 # Copy Jupyter notebooks into the image
 COPY notebooks /opt/notebooks
-#copy facet2 lattice over
-COPY facet2-lattice /opt/notebooks/facet2-lattice
-
-ENV FACET2_LATTICE=/opt/notebooks/facet2-lattice
 
 RUN mkdir /sdf
 
