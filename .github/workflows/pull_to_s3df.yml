@@ -2,7 +2,7 @@ name: Update Singularity Container
 
 on:
     workflow_run:
-      workflows: ["Build and Push Docker Image"]
+      workflows: ["S3DF - Build and Push Docker Image"]
       types:
         - completed
     workflow_dispatch:
