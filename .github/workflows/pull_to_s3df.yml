@@ -30,7 +30,7 @@ jobs:
         sleep 15
         export APPTAINER_CACHEDIR=$SCRATCH/.apptainer
         cd /sdf/group/facet/sanjeev/containers
-        rm -f impact-bmad_latest.sif
-        singularity pull docker://slacact/impact-bmad
+        rm -f FACET2-Bmad-PyTao_latest.sif
+        singularity pull docker://slacact/FACET2-Bmad-PyTao
         ls /sdf/group/facet/sanjeev/containers
         EOF
