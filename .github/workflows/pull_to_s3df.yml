@@ -1,0 +1,36 @@
+name: Update Singularity Container
+
+on:
+    workflow_run:
+      workflows: ["Build and Push Docker Image"]
+      types:
+        - completed
+    workflow_dispatch:
+
+  
+
+jobs:
+  update-container:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install sshpass
+      run: sudo apt-get update && sudo apt-get install -y sshpass
+
+    - name: Remove old Singularity container and pull new one
+      env:
+        SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+      run: |
+        sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no sanjeev@s3dflogin.slac.stanford.edu << 'EOF'
+        sleep 3
+        sshpass -p "$SSH_PASSWORD" ssh iana
+        sleep 15
+        export APPTAINER_CACHEDIR=$SCRATCH/.apptainer
+        cd /sdf/group/facet/sanjeev/containers
+        rm -f impact-bmad_latest.sif
+        singularity pull docker://slacact/impact-bmad
+        ls /sdf/group/facet/sanjeev/containers
+        EOF

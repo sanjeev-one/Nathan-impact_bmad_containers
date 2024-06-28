@@ -1,0 +1,4 @@
+[submodule "f2lattice_new"]
+	path = facet2-lattice
+	url = https://github.com/slaclab/facet2-lattice.git
+    branch = master
