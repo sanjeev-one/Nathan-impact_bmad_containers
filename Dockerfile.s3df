@@ -45,7 +45,7 @@ RUN /opt/conda/bin/conda install -y \
     conda-forge::distgen \
     h5py \
     pytao \
-    bayesian-optimization \
+    bayesian-optimization=1.4.3 \
     conda-forge::openpmd-beamphysics && \
     /opt/conda/bin/conda clean -afy
 
