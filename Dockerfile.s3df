@@ -45,12 +45,12 @@ RUN /opt/conda/bin/conda install -y \
     conda-forge::distgen \
     h5py \
     pytao \
-    bayesian-optimization=1.4.3 \
+
     conda-forge::openpmd-beamphysics && \
     /opt/conda/bin/conda clean -afy
 
 
-
+RUN   pip install bayesian-optimization
 
 # Install mpi4py with conda
 RUN conda install -c conda-forge mpi4py
